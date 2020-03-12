@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "openxpki"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "openxpki"
+    spec:
+      containers:
+        - name: "openxpki"
+          image: "pkware.azurecr.io/openxpki"
+          ports:
+          - containerPort: 80
