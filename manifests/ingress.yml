@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "openxpki"
+    labels:
+        app: "openxpki"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: openxpki5fc7-openxpki.7dbf091472ed4e43a711.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "openxpki"
+                servicePort: 80
